@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ueW-3Q-ILl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About-->
+        <scene sceneID="Nnb-Ir-Rqt">
+            <objects>
+                <viewController id="p0o-Q5-N84" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8SQ-FA-j3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="I38-bK-kUG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="About" image="info.circle" catalog="system" id="pTl-Oe-XoZ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gW8-vO-yfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="412" y="814"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jQw-4p-Li7">
+            <objects>
+                <tabBarController id="ueW-3Q-ILl" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mKF-dP-fWG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MVC-bL-Xha" kind="relationship" relationship="viewControllers" id="DO0-D4-ew8"/>
+                        <segue destination="QNG-hJ-XOR" kind="relationship" relationship="viewControllers" id="8z0-68-Zcc"/>
+                        <segue destination="p0o-Q5-N84" kind="relationship" relationship="viewControllers" id="ekD-y1-F21"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3FP-aS-2BS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-506" y="-165"/>
+        </scene>
+        <!--CONSTITUTION ACT, 1867-->
+        <scene sceneID="K9v-SK-kLn">
+            <objects>
+                <tableViewController id="yfU-Cv-FtI" customClass="FirstTableViewController" customModule="Canadian_Constitution" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0IY-H2-74A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.63657015559999997" green="0.70106917619999998" blue="0.75294983390000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3Ql-no-B5D">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Ql-no-B5D" id="sXG-YR-Phd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.63657015559999997" green="0.70106917619999998" blue="0.75294983390000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yfU-Cv-FtI" id="Ked-fV-l27"/>
+                            <outlet property="delegate" destination="yfU-Cv-FtI" id="Wt8-9g-dsz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CONSTITUTION ACT, 1867" id="znF-t3-9SF"/>
+                    <connections>
+                        <segue destination="38a-iA-Fq6" kind="show" id="4SA-kv-J8E"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3r7-Lu-y70" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334.7826086956522" y="-509.59821428571428"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="kNd-eW-QkX">
+            <objects>
+                <viewController restorationIdentifier="TextViewController" storyboardIdentifier="TextViewController" id="38a-iA-Fq6" customClass="TextViewController" customModule="Canadian_Constitution" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qyS-Fh-Y7R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUq-JS-F2k">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84357309339999997" green="0.86632746459999999" blue="0.8862783313" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Uxe-qC-1Lb" firstAttribute="trailing" secondItem="SUq-JS-F2k" secondAttribute="trailing" id="AWm-Jq-Oki"/>
+                            <constraint firstItem="SUq-JS-F2k" firstAttribute="top" secondItem="Uxe-qC-1Lb" secondAttribute="top" id="lqY-g1-b3E"/>
+                            <constraint firstItem="Uxe-qC-1Lb" firstAttribute="bottom" secondItem="SUq-JS-F2k" secondAttribute="bottom" id="rDG-Gj-cuz"/>
+                            <constraint firstItem="SUq-JS-F2k" firstAttribute="leading" secondItem="Uxe-qC-1Lb" secondAttribute="leading" id="yaD-3H-s1i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uxe-qC-1Lb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DPi-cw-SwH">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="oaa-ru-faF">
+                            <rect key="frame" x="141.5" y="5.5" width="131" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.69922643900000003" green="0.25961214300000002" blue="0.23919081689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <segments>
+                                <segment title="Text"/>
+                                <segment title="Notes"/>
+                            </segments>
+                            <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="oaa-ru-faF" id="tp8-EP-Szc"/>
+                        <outlet property="textView" destination="SUq-JS-F2k" id="JZ3-5S-jv0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZO-rE-us1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521" y="-198"/>
+        </scene>
+        <!--1867-->
+        <scene sceneID="U1t-gM-HMx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MVC-bL-Xha" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="1867" image="doc.text" catalog="system" id="B85-Ro-hhM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wJR-bt-f13">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.28661888839999999" green="0.41689181330000002" blue="0.55688124900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yfU-Cv-FtI" kind="relationship" relationship="rootViewController" id="aa4-5w-fst"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wc0-Nu-dgk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="424.63768115942031" y="-509.59821428571428"/>
+        </scene>
+        <!--1982-->
+        <scene sceneID="LSK-kP-h0l">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QNG-hJ-XOR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="1982" image="doc.text" catalog="system" id="xmf-V5-MWB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wBc-XV-e6E">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.28661888839999999" green="0.41689181330000002" blue="0.55688124900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tOu-eR-GZi" kind="relationship" relationship="rootViewController" id="x0T-Gh-ipn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tvl-kw-NXc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411.59420289855075" y="159.375"/>
+        </scene>
+        <!--CONSTITUTION ACT, 1982-->
+        <scene sceneID="rbf-Qx-vYf">
+            <objects>
+                <tableViewController id="tOu-eR-GZi" customClass="SecondTableViewController" customModule="Canadian_Constitution" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tff-Yb-YXh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.63657015559999997" green="0.70106917619999998" blue="0.75294983390000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="lEb-FP-MAM">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lEb-FP-MAM" id="vyf-ie-uPf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.63657015559999997" green="0.70106917619999998" blue="0.75294983390000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </tableViewCellContentView>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tOu-eR-GZi" id="O0g-8q-2PO"/>
+                            <outlet property="delegate" destination="tOu-eR-GZi" id="y4J-kv-Jyp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CONSTITUTION ACT, 1982" id="Ztw-P0-Awh"/>
+                    <connections>
+                        <segue destination="38a-iA-Fq6" kind="show" id="qhh-xY-PL9"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAc-l3-kU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328" y="170"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="doc.text" catalog="system" width="56" height="64"/>
+        <image name="info.circle" catalog="system" width="64" height="60"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qhh-xY-PL9"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</document>
