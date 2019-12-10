@@ -83,21 +83,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUq-JS-F2k">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-Lh-Ljb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SUq-JS-F2k">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <color key="backgroundColor" red="0.63657015559999997" green="0.70106917619999998" blue="0.75294983390000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SUq-JS-F2k" firstAttribute="leading" secondItem="1yd-Lh-Ljb" secondAttribute="leading" id="FVd-Pg-AYJ"/>
+                                    <constraint firstItem="SUq-JS-F2k" firstAttribute="top" secondItem="1yd-Lh-Ljb" secondAttribute="top" id="O6d-PC-IAG"/>
+                                    <constraint firstAttribute="bottom" secondItem="SUq-JS-F2k" secondAttribute="bottom" id="Wk6-Jz-DwA"/>
+                                    <constraint firstItem="YGq-Te-VIL" firstAttribute="trailing" secondItem="SUq-JS-F2k" secondAttribute="trailing" id="eap-f5-eU5"/>
+                                    <constraint firstItem="YGq-Te-VIL" firstAttribute="bottom" secondItem="SUq-JS-F2k" secondAttribute="bottom" id="m75-KJ-K8P"/>
+                                    <constraint firstAttribute="trailing" secondItem="SUq-JS-F2k" secondAttribute="trailing" id="yAv-ph-Eve"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="L2g-0U-v5x"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="YGq-Te-VIL"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.84357309339999997" green="0.86632746459999999" blue="0.8862783313" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Uxe-qC-1Lb" firstAttribute="trailing" secondItem="SUq-JS-F2k" secondAttribute="trailing" id="AWm-Jq-Oki"/>
-                            <constraint firstItem="SUq-JS-F2k" firstAttribute="top" secondItem="Uxe-qC-1Lb" secondAttribute="top" id="lqY-g1-b3E"/>
-                            <constraint firstItem="Uxe-qC-1Lb" firstAttribute="bottom" secondItem="SUq-JS-F2k" secondAttribute="bottom" id="rDG-Gj-cuz"/>
-                            <constraint firstItem="SUq-JS-F2k" firstAttribute="leading" secondItem="Uxe-qC-1Lb" secondAttribute="leading" id="yaD-3H-s1i"/>
+                            <constraint firstItem="1yd-Lh-Ljb" firstAttribute="top" secondItem="Uxe-qC-1Lb" secondAttribute="top" id="CLV-7l-rco"/>
+                            <constraint firstItem="Uxe-qC-1Lb" firstAttribute="trailing" secondItem="1yd-Lh-Ljb" secondAttribute="trailing" id="ga8-6X-8DB"/>
+                            <constraint firstItem="Uxe-qC-1Lb" firstAttribute="bottom" secondItem="1yd-Lh-Ljb" secondAttribute="bottom" id="tBk-wo-ILT"/>
+                            <constraint firstItem="1yd-Lh-Ljb" firstAttribute="leading" secondItem="Uxe-qC-1Lb" secondAttribute="leading" id="zF8-k8-Lgs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uxe-qC-1Lb"/>
                     </view>
@@ -112,6 +127,9 @@
                                 <segment title="Notes"/>
                             </segments>
                             <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="valueChanged:" destination="38a-iA-Fq6" eventType="valueChanged" id="hks-dJ-wnb"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
@@ -121,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZO-rE-us1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2521" y="-198"/>
+            <point key="canvasLocation" x="2520.289855072464" y="-198.21428571428569"/>
         </scene>
         <!--1867-->
         <scene sceneID="U1t-gM-HMx">
@@ -211,7 +229,6 @@
         <image name="info.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qhh-xY-PL9"/>
+        <segue reference="4SA-kv-J8E"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

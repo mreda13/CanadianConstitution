@@ -14,10 +14,29 @@ class FirstTableViewController: UITableViewController {
     "VIII. REVENUES; DEBTS; ASSETS; TAXATION","IX. MISCELLANEOUS PROVISIONS","X. INTERCOLONIAL RAILWAY","XI. ADMISSION OF OTHER COLONIES","THE FIRST SCHEDULE","THE SECOND SCHEDULE",
     "THE THIRD SCHEDULE","THE FOURTH SCHEDULE","THE FIFTH SCHEDULE","THE SIXTH SCHEDULE"]
         
+    var sections:[Section] = []
+    
+    func parseJSON() {
+        let decoder = JSONDecoder()
+        
+        if let path = Bundle.main.path(forResource: "demo", ofType: "json") {
+            do {
+                let data = NSData(contentsOf: URL(fileURLWithPath: path))! as Data
+                let jsonData = try decoder.decode(Array<Section>.self, from: data)
+                sections = jsonData
+            }
+            catch {
+                print(error)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.tableFooterView?.backgroundColor = tableView.backgroundColor
+        self.navigationController?.navigationBar.tintColor = .white
+        parseJSON()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -52,6 +71,8 @@ class FirstTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "TextViewController") as! TextViewController
+        print(sections.count)
+        vc.section = sections[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -100,5 +121,21 @@ class FirstTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
+}
+
+extension String {
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return NSAttributedString()
+        }
+    }
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
+    }
 }

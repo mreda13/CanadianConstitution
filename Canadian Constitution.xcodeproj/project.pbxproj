@@ -17,10 +17,12 @@
 		07C9608E239DBC5800BD6719 /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9608D239DBC5800BD6719 /* FirstTableViewController.swift */; };
 		07C96092239DC34B00BD6719 /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C96091239DC34B00BD6719 /* SecondTableViewController.swift */; };
 		07C96094239DEACD00BD6719 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C96093239DEACD00BD6719 /* TextViewController.swift */; };
+		07C96099239F0B9D00BD6719 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = 07C96098239F0B9D00BD6719 /* demo.json */; };
+		07C9609B239F0DBD00BD6719 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9609A239F0DBD00BD6719 /* Section.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07C96073239DAF3800BD6719 /* Canadian Constitution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canadian Constitution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07C96073239DAF3800BD6719 /* CanadianConstitution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadianConstitution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C96076239DAF3800BD6719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07C96078239DAF3800BD6719 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		07C9607A239DAF3800BD6719 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		07C9608D239DBC5800BD6719 /* FirstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
 		07C96091239DC34B00BD6719 /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
 		07C96093239DEACD00BD6719 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		07C96098239F0B9D00BD6719 /* demo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
+		07C9609A239F0DBD00BD6719 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,7 @@
 		07C9606A239DAF3800BD6719 = {
 			isa = PBXGroup;
 			children = (
-				07C96075239DAF3800BD6719 /* Canadian Constitution */,
+				07C96075239DAF3800BD6719 /* CanadianConstitution */,
 				07C96074239DAF3800BD6719 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,14 +60,15 @@
 		07C96074239DAF3800BD6719 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07C96073239DAF3800BD6719 /* Canadian Constitution.app */,
+				07C96073239DAF3800BD6719 /* CanadianConstitution.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		07C96075239DAF3800BD6719 /* Canadian Constitution */ = {
+		07C96075239DAF3800BD6719 /* CanadianConstitution */ = {
 			isa = PBXGroup;
 			children = (
+				07C96095239F04A500BD6719 /* Model */,
 				07C96090239DC32F00BD6719 /* Views */,
 				07C9608F239DBC5D00BD6719 /* Controllers */,
 				07C96076239DAF3800BD6719 /* AppDelegate.swift */,
@@ -71,9 +76,9 @@
 				07C9607A239DAF3800BD6719 /* ViewController.swift */,
 				07C96082239DAF3B00BD6719 /* Assets.xcassets */,
 				07C96087239DAF3B00BD6719 /* Info.plist */,
-				07C9607F239DAF3800BD6719 /* Canadian_Constitution.xcdatamodeld */,
+				07C96098239F0B9D00BD6719 /* demo.json */,
 			);
-			path = "Canadian Constitution";
+			path = CanadianConstitution;
 			sourceTree = "<group>";
 		};
 		07C9608F239DBC5D00BD6719 /* Controllers */ = {
@@ -95,6 +100,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		07C96095239F04A500BD6719 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07C9607F239DAF3800BD6719 /* Canadian_Constitution.xcdatamodeld */,
+				07C9609A239F0DBD00BD6719 /* Section.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,7 +126,7 @@
 			);
 			name = "Canadian Constitution";
 			productName = "Canadian Constitution";
-			productReference = 07C96073239DAF3800BD6719 /* Canadian Constitution.app */;
+			productReference = 07C96073239DAF3800BD6719 /* CanadianConstitution.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -154,6 +168,7 @@
 			files = (
 				07C96086239DAF3B00BD6719 /* LaunchScreen.storyboard in Resources */,
 				07C96083239DAF3B00BD6719 /* Assets.xcassets in Resources */,
+				07C96099239F0B9D00BD6719 /* demo.json in Resources */,
 				07C9607E239DAF3800BD6719 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C9609B239F0DBD00BD6719 /* Section.swift in Sources */,
 				07C9608E239DBC5800BD6719 /* FirstTableViewController.swift in Sources */,
 				07C96092239DC34B00BD6719 /* SecondTableViewController.swift in Sources */,
 				07C9607B239DAF3800BD6719 /* ViewController.swift in Sources */,
@@ -317,13 +333,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96WV9YZG75;
-				INFOPLIST_FILE = "Canadian Constitution/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CanadianConstitution/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.metwaly.Canadian-Constitution";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.metwaly.CanadianConstitution;
+				PRODUCT_NAME = CanadianConstitution;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -335,13 +351,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96WV9YZG75;
-				INFOPLIST_FILE = "Canadian Constitution/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CanadianConstitution/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.metwaly.Canadian-Constitution";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.metwaly.CanadianConstitution;
+				PRODUCT_NAME = CanadianConstitution;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
