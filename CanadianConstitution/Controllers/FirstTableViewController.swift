@@ -19,7 +19,7 @@ class FirstTableViewController: UITableViewController {
     func parseJSON() {
         let decoder = JSONDecoder()
         
-        if let path = Bundle.main.path(forResource: "demo", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "1867", ofType: "json") {
             do {
                 let data = NSData(contentsOf: URL(fileURLWithPath: path))! as Data
                 let jsonData = try decoder.decode(Array<Section>.self, from: data)
