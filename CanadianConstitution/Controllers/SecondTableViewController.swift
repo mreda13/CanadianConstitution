@@ -11,11 +11,29 @@ class SecondTableViewController: UITableViewController {
 
     let newAct = ["I. CANADIAN CHARTER OF RIGHTS AND FREEDOMS", "II. RIGHTS OF THE ABORIGINAL PEOPLES OF CANADA", "III. EQUALIZATION AND REGIONAL DISPARITIES" ,"IV. CONSTITUTIONAL CONFERENCE" , "IV.I. CONSTITUTIONAL CONFERENCES", "V. PROCEDURE FOR AMENDING CONSTITUTION OF CANADA", "VI. AMENDMENT TO THE CONSTITUTION ACT, 1867","VII. GENERAL","SCHEDULE TO THE CONSTITUTION ACT, 1982"]
     
+    var sections:[Section] = []
+    
+    func parseJSON() {
+        let decoder = JSONDecoder()
+        
+        if let path = Bundle.main.path(forResource: "1982", ofType: "json") {
+            do {
+                let data = NSData(contentsOf: URL(fileURLWithPath: path))! as Data
+                let jsonData = try decoder.decode(Array<Section>.self, from: data)
+                sections = jsonData
+            }
+            catch {
+                print(error)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.tableFooterView?.backgroundColor = tableView.backgroundColor
-
+        
+        parseJSON()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -50,6 +68,7 @@ class SecondTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "TextViewController") as! TextViewController
+        vc.section = sections[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
