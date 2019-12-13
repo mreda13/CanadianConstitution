@@ -9,7 +9,7 @@ import UIKit
 
 class SecondTableViewController: UITableViewController {
 
-    let newAct = ["I. CANADIAN CHARTER OF RIGHTS AND FREEDOMS", "II. RIGHTS OF THE ABORIGINAL PEOPLES OF CANADA", "III. EQUALIZATION AND REGIONAL DISPARITIES" ,"IV. CONSTITUTIONAL CONFERENCE" , "IV.I. CONSTITUTIONAL CONFERENCES", "V. PROCEDURE FOR AMENDING CONSTITUTION OF CANADA", "VI. AMENDMENT TO THE CONSTITUTION ACT, 1867","VII. GENERAL","SCHEDULE TO THE CONSTITUTION ACT, 1982"]
+    let newAct = ["I. CANADIAN CHARTER OF RIGHTS AND FREEDOMS", "II. RIGHTS OF THE ABORIGINAL PEOPLES OF CANADA", "III. EQUALIZATION AND REGIONAL DISPARITIES" ,"IV. CONSTITUTIONAL CONFERENCE" , "IV.I. CONSTITUTIONAL CONFERENCES", "V. PROCEDURE FOR AMENDING CONSTITUTION OF CANADA", "VI. AMENDMENT TO THE CONSTITUTION ACT, 1867","VII. GENERAL"]
     
     var sections:[Section] = []
     
@@ -32,7 +32,8 @@ class SecondTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.tableFooterView?.backgroundColor = tableView.backgroundColor
-        
+        self.navigationController?.navigationBar.tintColor = .white
+
         parseJSON()
 
         // Uncomment the following line to preserve selection between presentations

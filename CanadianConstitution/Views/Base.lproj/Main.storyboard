@@ -46,18 +46,61 @@
         <!--Premium-->
         <scene sceneID="4FO-3P-Zhe">
             <objects>
-                <viewController id="qD0-zL-aay" sceneMemberID="viewController">
+                <viewController id="qD0-zL-aay" customClass="PremiumViewController" customModule="CanadianConstitution" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VaX-xq-niK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HsD-bZ-gq6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="272"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kb-MZ-2eU">
+                                <rect key="frame" x="10" y="388" width="394" height="34"/>
+                                <color key="backgroundColor" red="0.69922643900000003" green="0.25961214300000002" blue="0.23919081689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Restore Purchase">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mf-Wr-11X">
+                                <rect key="frame" x="10" y="337" width="394" height="34"/>
+                                <color key="backgroundColor" red="0.69922643900000003" green="0.25961214300000002" blue="0.23919081689999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Purchase">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="X6S-Sh-iHY" firstAttribute="trailing" secondItem="7kb-MZ-2eU" secondAttribute="trailing" constant="10" id="78H-nO-Ffc"/>
+                            <constraint firstItem="7kb-MZ-2eU" firstAttribute="leading" secondItem="X6S-Sh-iHY" secondAttribute="leading" constant="10" id="7FI-Jf-kkj"/>
+                            <constraint firstItem="X6S-Sh-iHY" firstAttribute="bottom" secondItem="7kb-MZ-2eU" secondAttribute="bottom" constant="303" id="C2o-2o-AwQ"/>
+                            <constraint firstItem="7kb-MZ-2eU" firstAttribute="top" secondItem="1mf-Wr-11X" secondAttribute="bottom" constant="17" id="RIk-vP-G77"/>
+                            <constraint firstItem="HsD-bZ-gq6" firstAttribute="top" secondItem="X6S-Sh-iHY" secondAttribute="top" id="Se0-5P-gWJ"/>
+                            <constraint firstItem="X6S-Sh-iHY" firstAttribute="trailing" secondItem="HsD-bZ-gq6" secondAttribute="trailing" id="Sx4-i4-rzq"/>
+                            <constraint firstItem="X6S-Sh-iHY" firstAttribute="trailing" secondItem="1mf-Wr-11X" secondAttribute="trailing" constant="10" id="UJi-PC-xOt"/>
+                            <constraint firstItem="HsD-bZ-gq6" firstAttribute="leading" secondItem="X6S-Sh-iHY" secondAttribute="leading" id="XCs-gm-fW9"/>
+                            <constraint firstItem="1mf-Wr-11X" firstAttribute="top" secondItem="HsD-bZ-gq6" secondAttribute="bottom" constant="65" id="iYh-sh-r4L"/>
+                            <constraint firstItem="1mf-Wr-11X" firstAttribute="leading" secondItem="X6S-Sh-iHY" secondAttribute="leading" constant="10" id="pjf-ny-wxg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="X6S-Sh-iHY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Premium" image="dollarsign.square" catalog="system" id="TpS-FZ-2nG"/>
+                    <navigationItem key="navigationItem" title="Premium" id="TUp-ja-wYA"/>
+                    <connections>
+                        <outlet property="purchaseButton" destination="1mf-Wr-11X" id="dpm-TU-LVF"/>
+                        <outlet property="restorePurchaseButton" destination="7kb-MZ-2eU" id="Sw5-pD-CFv"/>
+                        <outlet property="textView" destination="HsD-bZ-gq6" id="bEa-bk-QqV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aj6-SB-0R0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412" y="1571"/>
+            <point key="canvasLocation" x="1321.7391304347827" y="1570.9821428571429"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jQw-4p-Li7">
@@ -72,7 +115,7 @@
                         <segue destination="MVC-bL-Xha" kind="relationship" relationship="viewControllers" id="DO0-D4-ew8"/>
                         <segue destination="QNG-hJ-XOR" kind="relationship" relationship="viewControllers" id="8z0-68-Zcc"/>
                         <segue destination="VDO-8h-WjR" kind="relationship" relationship="viewControllers" id="ekD-y1-F21"/>
-                        <segue destination="qD0-zL-aay" kind="relationship" relationship="viewControllers" id="Pdj-Ra-5kl"/>
+                        <segue destination="vzg-Vf-9oE" kind="relationship" relationship="viewControllers" id="Pdj-Ra-5kl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3FP-aS-2BS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -283,6 +326,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLz-XW-9OT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="411.59420289855075" y="813.61607142857144"/>
+        </scene>
+        <!--Premium-->
+        <scene sceneID="Cxc-2m-Z9X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vzg-Vf-9oE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Premium" image="dollarsign.square" catalog="system" id="TpS-FZ-2nG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="8iY-kL-3PZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.28661888839999999" green="0.41689181330000002" blue="0.55688124900000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qD0-zL-aay" kind="relationship" relationship="rootViewController" id="viu-CE-sib"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KuL-rn-UrR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411.59420289855075" y="1570.9821428571429"/>
         </scene>
     </scenes>
     <resources>
