@@ -22,9 +22,7 @@ class TextViewController: UIViewController {
         segmentedControl.setTitleTextAttributes(selectedAttributes , for: .selected)
         let titleString = "<p style=\"text-align:center\"><font size = \"6.5 \" face = \"Helvetica\">" + (section.title ?? "") + "</font></p><hr>"
         let formattedText = titleString + "<font size = \"6\" face = \"Helvetica\">" + (section.text ?? "") + "</font>"
-        print(formattedText)
         textView.attributedText = formattedText.htmlToAttributedString
-        //textView.font = .systemFont(ofSize: 22)
         
     }
     

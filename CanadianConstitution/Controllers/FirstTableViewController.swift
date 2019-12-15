@@ -37,6 +37,12 @@ class FirstTableViewController: UITableViewController {
         tableView.tableFooterView?.backgroundColor = tableView.backgroundColor
         self.navigationController?.navigationBar.tintColor = .white
         parseJSON()
+        
+        PaidProduct.store.requestProducts {(success, products) in
+            if success {
+                print (products?.count)
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
