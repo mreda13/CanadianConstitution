@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class PremiumViewController: UIViewController {
     
@@ -17,23 +18,32 @@ class PremiumViewController: UIViewController {
     
     public static let Premium = "com.metwaly.CanadianConstitution.premium"    
     
+    var productArray: [SKProduct] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         purchaseButton.layer.cornerRadius = 18.0
         restorePurchaseButton.layer.cornerRadius = 18.0
         // Do any additional setup after loading the view.
+        
+        textView.text = "\tThe premium version of this application includes a search feature. More premium features will be added in upcoming versions of the app.\n\n\tIt is a one time payment of $3.99 CAD that will help fund further development and maintenance of this application."
+        
+        PaidProduct.store.requestProducts {(success, products) in
+            if success {
+                self.productArray = products ?? []
+            }
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func purchasePressed(_ sender: Any) {
+        PaidProduct.store.buyProduct(productArray[0])
     }
-    */
+    
+    @IBAction func restorePurchasePressed(_ sender: Any) {
+        PaidProduct.store.restorePurchases()
+    }
+
 
 }
