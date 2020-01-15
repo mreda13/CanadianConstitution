@@ -13,9 +13,13 @@ class FirstTableViewController: UITableViewController {
     "V. PROVINCIAL CONSTITUTIONS","VI. DISTRIBUTION OF LEGISLATIVE POWERS","VII. JUDICATURE",
     "VIII. REVENUES; DEBTS; ASSETS; TAXATION","IX. MISCELLANEOUS PROVISIONS","X. INTERCOLONIAL RAILWAY","XI. ADMISSION OF OTHER COLONIES","THE FIRST SCHEDULE","THE SECOND SCHEDULE",
     "THE THIRD SCHEDULE","THE FOURTH SCHEDULE","THE FIFTH SCHEDULE","THE SIXTH SCHEDULE"]
-        
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filteredSections:[Section] = []
     var sections:[Section] = []
     
+    // MARK: HELPER METHODS
     func parseJSON() {
         let decoder = JSONDecoder()
         
@@ -31,23 +35,33 @@ class FirstTableViewController: UITableViewController {
         }
     }
     
+    //MARK: SEARCH HELPER METHODS
+
+    
+    //MARK: SYSYEM METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.tableFooterView?.backgroundColor = tableView.backgroundColor
         self.navigationController?.navigationBar.tintColor = .white
+
         parseJSON()
+        if PaidProduct.store.isProductPurchased(PaidProduct.premium){
+            setupSearch()
+        }
         
         PaidProduct.store.requestProducts {(success, products) in
             if success {
-                print (products?.count)
+                print (products?.count ?? 0)
             }
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if PaidProduct.store.isProductPurchased(PaidProduct.premium){
+            setupSearch()
+        }
     }
     
     // MARK: - Table view data source
@@ -58,17 +72,26 @@ class FirstTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return oldAct.count
+        if isFiltering {
+            return filteredSections.count
+        }
+        else{
+            return oldAct.count
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        cell.textLabel?.text = oldAct[indexPath.row]
+        
+        if isFiltering{
+            cell.textLabel?.text = filteredSections[indexPath.row].title
+        }
+        else{
+            cell.textLabel?.text = oldAct[indexPath.row]
+        }
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = .byWordWrapping
-        //cell.textLabel?.textColor = .white
         cell.textLabel?.font = .boldSystemFont(ofSize: 22.0)
         
         return cell
@@ -77,60 +100,53 @@ class FirstTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "TextViewController") as! TextViewController
-        print(sections.count)
-        vc.section = sections[indexPath.row]
+        if isFiltering{
+            vc.section = filteredSections[indexPath.row]
+        }
+        else{
+            vc.section = sections[indexPath.row]
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
-
 }
+
+//MARK: SEARCH EXTENSION
+extension FirstTableViewController: UISearchResultsUpdating {
+        
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
+    
+    func setupSearch(){
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search ..."
+        searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.searchBar.searchTextField.tintColor = .black
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
+        definesPresentationContext = true
+        extendedLayoutIncludesOpaqueBars = true
+    }
+    
+    func filterResults(_ searchText:String){
+        filteredSections = sections.filter({ (section:Section) -> Bool in
+            return section.text?.lowercased().contains(searchText.lowercased()) ?? false || section.notes?.lowercased().contains(searchText.lowercased()) ?? false ||
+                section.title?.lowercased().contains(searchText.lowercased()) ?? false
+        })
+        tableView.reloadData()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterResults(searchBar.text!)
+    }
+}
+
 
 extension String {
     var htmlToAttributedString: NSAttributedString? {

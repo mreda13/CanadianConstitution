@@ -10,7 +10,7 @@ import Foundation
 
 public struct PaidProduct {
   
-  public static let premium = "com.metwaly.CanadianConstitution.premium"
+  public static let premium = "premium"
   
   private static let productIdentifiers: Set<ProductIdentifier> = [PaidProduct.premium]
 
