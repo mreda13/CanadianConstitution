@@ -28,7 +28,7 @@ class PremiumViewController: UIViewController {
         purchaseButton.layer.cornerRadius = 18.0
         restorePurchaseButton.layer.cornerRadius = 18.0
         activityIndicator.alpha = 0
-        textView.text = "\tThe premium version of this application includes a search feature. More premium features will be added in upcoming versions of the app.\n\n\tIt is a one time payment of $3.99 CAD that will help fund further development and maintenance of this application."
+        textView.text = "\tThe premium version of this application includes a search feature. More premium features will be added in upcoming updates.\n\n\tIt is a one time payment of $3.99 CAD that will help fund further development and maintenance of this application."
         
         PaidProduct.store.requestProducts {(success, products) in
             if success {
