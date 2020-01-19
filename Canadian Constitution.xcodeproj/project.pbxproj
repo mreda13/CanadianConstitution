@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07878A5E23A69DB300CE43DE /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07878A5D23A69DB300CE43DE /* IAPHelper.swift */; };
+		07878A6023A69DCE00CE43DE /* PaidProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07878A5F23A69DCE00CE43DE /* PaidProduct.swift */; };
 		07C96077239DAF3800BD6719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C96076239DAF3800BD6719 /* AppDelegate.swift */; };
 		07C96079239DAF3800BD6719 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C96078239DAF3800BD6719 /* SceneDelegate.swift */; };
 		07C9607B239DAF3800BD6719 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9607A239DAF3800BD6719 /* ViewController.swift */; };
@@ -17,11 +19,17 @@
 		07C9608E239DBC5800BD6719 /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9608D239DBC5800BD6719 /* FirstTableViewController.swift */; };
 		07C96092239DC34B00BD6719 /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C96091239DC34B00BD6719 /* SecondTableViewController.swift */; };
 		07C96094239DEACD00BD6719 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C96093239DEACD00BD6719 /* TextViewController.swift */; };
-		07C96099239F0B9D00BD6719 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = 07C96098239F0B9D00BD6719 /* demo.json */; };
+		07C96099239F0B9D00BD6719 /* 1867.json in Resources */ = {isa = PBXBuildFile; fileRef = 07C96098239F0B9D00BD6719 /* 1867.json */; };
 		07C9609B239F0DBD00BD6719 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9609A239F0DBD00BD6719 /* Section.swift */; };
+		07C9609F23A08BD200BD6719 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9609E23A08BD200BD6719 /* AboutViewController.swift */; };
+		07C960A123A1B86900BD6719 /* 1982.json in Resources */ = {isa = PBXBuildFile; fileRef = 07C960A023A1B86900BD6719 /* 1982.json */; };
+		07C960A323A1C07500BD6719 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C960A223A1C07500BD6719 /* PremiumViewController.swift */; };
+		07C960A623A1C61A00BD6719 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C960A523A1C61A00BD6719 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07878A5D23A69DB300CE43DE /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		07878A5F23A69DCE00CE43DE /* PaidProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidProduct.swift; sourceTree = "<group>"; };
 		07C96073239DAF3800BD6719 /* CanadianConstitution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadianConstitution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C96076239DAF3800BD6719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07C96078239DAF3800BD6719 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,8 +42,12 @@
 		07C9608D239DBC5800BD6719 /* FirstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
 		07C96091239DC34B00BD6719 /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
 		07C96093239DEACD00BD6719 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
-		07C96098239F0B9D00BD6719 /* demo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
+		07C96098239F0B9D00BD6719 /* 1867.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 1867.json; sourceTree = "<group>"; };
 		07C9609A239F0DBD00BD6719 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		07C9609E23A08BD200BD6719 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		07C960A023A1B86900BD6719 /* 1982.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 1982.json; sourceTree = "<group>"; };
+		07C960A223A1C07500BD6719 /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
+		07C960A523A1C61A00BD6719 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +55,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C960A623A1C61A00BD6719 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07878A5C23A69D9E00CE43DE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				07878A5D23A69DB300CE43DE /* IAPHelper.swift */,
+				07878A5F23A69DCE00CE43DE /* PaidProduct.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		07C9606A239DAF3800BD6719 = {
 			isa = PBXGroup;
 			children = (
 				07C96075239DAF3800BD6719 /* CanadianConstitution */,
 				07C96074239DAF3800BD6719 /* Products */,
+				07C960A423A1C61A00BD6719 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +91,7 @@
 		07C96075239DAF3800BD6719 /* CanadianConstitution */ = {
 			isa = PBXGroup;
 			children = (
+				07878A5C23A69D9E00CE43DE /* Helpers */,
 				07C96095239F04A500BD6719 /* Model */,
 				07C96090239DC32F00BD6719 /* Views */,
 				07C9608F239DBC5D00BD6719 /* Controllers */,
@@ -76,7 +100,8 @@
 				07C9607A239DAF3800BD6719 /* ViewController.swift */,
 				07C96082239DAF3B00BD6719 /* Assets.xcassets */,
 				07C96087239DAF3B00BD6719 /* Info.plist */,
-				07C96098239F0B9D00BD6719 /* demo.json */,
+				07C96098239F0B9D00BD6719 /* 1867.json */,
+				07C960A023A1B86900BD6719 /* 1982.json */,
 			);
 			path = CanadianConstitution;
 			sourceTree = "<group>";
@@ -87,6 +112,8 @@
 				07C9608D239DBC5800BD6719 /* FirstTableViewController.swift */,
 				07C96091239DC34B00BD6719 /* SecondTableViewController.swift */,
 				07C96093239DEACD00BD6719 /* TextViewController.swift */,
+				07C9609E23A08BD200BD6719 /* AboutViewController.swift */,
+				07C960A223A1C07500BD6719 /* PremiumViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +134,14 @@
 				07C9609A239F0DBD00BD6719 /* Section.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		07C960A423A1C61A00BD6719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07C960A523A1C61A00BD6719 /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +203,8 @@
 			files = (
 				07C96086239DAF3B00BD6719 /* LaunchScreen.storyboard in Resources */,
 				07C96083239DAF3B00BD6719 /* Assets.xcassets in Resources */,
-				07C96099239F0B9D00BD6719 /* demo.json in Resources */,
+				07C960A123A1B86900BD6719 /* 1982.json in Resources */,
+				07C96099239F0B9D00BD6719 /* 1867.json in Resources */,
 				07C9607E239DAF3800BD6719 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,11 +216,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07878A5E23A69DB300CE43DE /* IAPHelper.swift in Sources */,
 				07C9609B239F0DBD00BD6719 /* Section.swift in Sources */,
 				07C9608E239DBC5800BD6719 /* FirstTableViewController.swift in Sources */,
+				07878A6023A69DCE00CE43DE /* PaidProduct.swift in Sources */,
 				07C96092239DC34B00BD6719 /* SecondTableViewController.swift in Sources */,
+				07C9609F23A08BD200BD6719 /* AboutViewController.swift in Sources */,
 				07C9607B239DAF3800BD6719 /* ViewController.swift in Sources */,
 				07C96077239DAF3800BD6719 /* AppDelegate.swift in Sources */,
+				07C960A323A1C07500BD6719 /* PremiumViewController.swift in Sources */,
 				07C96079239DAF3800BD6719 /* SceneDelegate.swift in Sources */,
 				07C96094239DEACD00BD6719 /* TextViewController.swift in Sources */,
 				07C96081239DAF3800BD6719 /* Canadian_Constitution.xcdatamodeld in Sources */,
@@ -331,15 +371,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96WV9YZG75;
 				INFOPLIST_FILE = "$(SRCROOT)/CanadianConstitution/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.metwaly.CanadianConstitution;
 				PRODUCT_NAME = CanadianConstitution;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -349,15 +392,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96WV9YZG75;
 				INFOPLIST_FILE = "$(SRCROOT)/CanadianConstitution/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.metwaly.CanadianConstitution;
 				PRODUCT_NAME = CanadianConstitution;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -80,17 +80,22 @@
                                     <action selector="purchasePressed:" destination="qD0-zL-aay" eventType="touchUpInside" id="RYK-kP-C9f"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="DIV-Td-XRe">
+                                <rect key="frame" x="197" y="655" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.63657015559999997" green="0.70106917619999998" blue="0.75294983390000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="X6S-Sh-iHY" firstAttribute="trailing" secondItem="7kb-MZ-2eU" secondAttribute="trailing" constant="10" id="78H-nO-Ffc"/>
                             <constraint firstItem="7kb-MZ-2eU" firstAttribute="leading" secondItem="X6S-Sh-iHY" secondAttribute="leading" constant="10" id="7FI-Jf-kkj"/>
-                            <constraint firstItem="X6S-Sh-iHY" firstAttribute="bottom" secondItem="7kb-MZ-2eU" secondAttribute="bottom" constant="100" id="C2o-2o-AwQ"/>
+                            <constraint firstItem="DIV-Td-XRe" firstAttribute="centerX" secondItem="VaX-xq-niK" secondAttribute="centerX" id="LJZ-L0-y7E"/>
                             <constraint firstItem="7kb-MZ-2eU" firstAttribute="top" secondItem="1mf-Wr-11X" secondAttribute="bottom" constant="17" id="RIk-vP-G77"/>
                             <constraint firstItem="HsD-bZ-gq6" firstAttribute="top" secondItem="X6S-Sh-iHY" secondAttribute="top" constant="20" id="Se0-5P-gWJ"/>
                             <constraint firstItem="X6S-Sh-iHY" firstAttribute="trailing" secondItem="HsD-bZ-gq6" secondAttribute="trailing" id="Sx4-i4-rzq"/>
                             <constraint firstItem="X6S-Sh-iHY" firstAttribute="trailing" secondItem="1mf-Wr-11X" secondAttribute="trailing" constant="10" id="UJi-PC-xOt"/>
                             <constraint firstItem="HsD-bZ-gq6" firstAttribute="leading" secondItem="X6S-Sh-iHY" secondAttribute="leading" id="XCs-gm-fW9"/>
+                            <constraint firstItem="DIV-Td-XRe" firstAttribute="top" secondItem="7kb-MZ-2eU" secondAttribute="bottom" constant="30" id="c5n-hS-bpZ"/>
+                            <constraint firstItem="X6S-Sh-iHY" firstAttribute="bottom" secondItem="DIV-Td-XRe" secondAttribute="bottom" constant="50" id="cZz-Ns-4kO"/>
                             <constraint firstItem="1mf-Wr-11X" firstAttribute="top" secondItem="HsD-bZ-gq6" secondAttribute="bottom" constant="65" id="iYh-sh-r4L"/>
                             <constraint firstItem="1mf-Wr-11X" firstAttribute="leading" secondItem="X6S-Sh-iHY" secondAttribute="leading" constant="10" id="pjf-ny-wxg"/>
                         </constraints>
@@ -98,6 +103,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Premium" id="TUp-ja-wYA"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="DIV-Td-XRe" id="Jzq-zJ-pew"/>
                         <outlet property="purchaseButton" destination="1mf-Wr-11X" id="dpm-TU-LVF"/>
                         <outlet property="restorePurchaseButton" destination="7kb-MZ-2eU" id="Sw5-pD-CFv"/>
                         <outlet property="textView" destination="HsD-bZ-gq6" id="bEa-bk-QqV"/>

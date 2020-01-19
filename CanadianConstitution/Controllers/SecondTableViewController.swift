@@ -9,12 +9,13 @@ import UIKit
 
 class SecondTableViewController: UITableViewController {
 
-    let newAct = ["I. CANADIAN CHARTER OF RIGHTS AND FREEDOMS", "II. RIGHTS OF THE ABORIGINAL PEOPLES OF CANADA", "III. EQUALIZATION AND REGIONAL DISPARITIES" ,"IV. CONSTITUTIONAL CONFERENCE" , "IV.I. CONSTITUTIONAL CONFERENCES", "V. PROCEDURE FOR AMENDING CONSTITUTION OF CANADA", "VI. AMENDMENT TO THE CONSTITUTION ACT, 1867","VII. GENERAL"]
+    let newAct = ["PART I", "PART II", "PART III" ,"PART IV" , "PART IV.I ", "PART V", "PART VI","PART VII"]
     
     let searchController = UISearchController(searchResultsController: nil)
     
     var filteredSections:[Section] = []
     var sections:[Section] = []
+    
     
     func parseJSON() {
         let decoder = JSONDecoder()
@@ -36,15 +37,14 @@ class SecondTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.tableFooterView?.backgroundColor = tableView.backgroundColor
         self.navigationController?.navigationBar.tintColor = .white
-
         parseJSON()
         if PaidProduct.store.isProductPurchased(PaidProduct.premium){
             setupSearch()
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if PaidProduct.store.isProductPurchased(PaidProduct.premium){
             setupSearch()
         }

@@ -44,30 +44,24 @@ class FirstTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.tableFooterView?.backgroundColor = tableView.backgroundColor
         self.navigationController?.navigationBar.tintColor = .white
-
         parseJSON()
+        
         if PaidProduct.store.isProductPurchased(PaidProduct.premium){
             setupSearch()
-        }
-        
-        PaidProduct.store.requestProducts {(success, products) in
-            if success {
-                print (products?.count ?? 0)
-            }
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if PaidProduct.store.isProductPurchased(PaidProduct.premium){
             setupSearch()
         }
     }
+    
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
