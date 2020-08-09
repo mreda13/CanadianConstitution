@@ -16,10 +16,14 @@ class TextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let normalAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white , NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 18) as Any] as [NSAttributedString.Key : Any]
+        
         let selectedAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black , NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 18) as Any] as [NSAttributedString.Key : Any]
+        
         segmentedControl.setTitleTextAttributes(normalAttributes , for: .normal)
         segmentedControl.setTitleTextAttributes(selectedAttributes , for: .selected)
+        
         let titleString = "<p style=\"text-align:center\"><font size = \"6.5 \" face = \"Helvetica\">" + (section.title ?? "") + "</font></p><hr>"
         let formattedText = titleString + "<font size = \"6\" face = \"Helvetica\">" + (section.text ?? "") + "</font>"
         textView.attributedText = formattedText.htmlToAttributedString
@@ -39,15 +43,4 @@ class TextViewController: UIViewController {
             textView.attributedText = formattedText.htmlToAttributedString
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

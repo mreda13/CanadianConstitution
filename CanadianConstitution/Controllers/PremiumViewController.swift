@@ -29,6 +29,9 @@ class PremiumViewController: UIViewController {
         restorePurchaseButton.layer.cornerRadius = 18.0
         activityIndicator.alpha = 0
         textView.text = "\tThe premium version of this application includes a search feature. More premium features will be added in upcoming updates.\n\n\tIt is a one time payment of $3.99 CAD that will help fund further development and maintenance of this application."
+        textView.layer.cornerRadius = 18.0
+        textView.layer.borderWidth = 2.0
+        textView.textContainerInset = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
         
         PaidProduct.store.requestProducts {(success, products) in
             if success {
@@ -47,7 +50,7 @@ class PremiumViewController: UIViewController {
             
             PaidProduct.store.requestProducts {(success, products) in
                 if success {
-                    //print ("Number of products found: \(products?.count ?? 0)")
+                    print ("Number of products found: \(products?.count ?? 0)")
                 }
                 else {
                     DispatchQueue.main.async {
@@ -75,7 +78,7 @@ class PremiumViewController: UIViewController {
         
         PaidProduct.store.requestProducts {(success, products) in
             if success {
-                //print ("Number of products found: \(products?.count ?? 0)")
+                print ("Number of products found: \(products?.count ?? 0)")
             }
             else {
                 DispatchQueue.main.async {

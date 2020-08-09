@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		07878A5E23A69DB300CE43DE /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07878A5D23A69DB300CE43DE /* IAPHelper.swift */; };
 		07878A6023A69DCE00CE43DE /* PaidProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07878A5F23A69DCE00CE43DE /* PaidProduct.swift */; };
+		07B98ED224E04DBA002712F6 /* ConstitutionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B98ED124E04DBA002712F6 /* ConstitutionTableViewController.swift */; };
+		07B98ED524E05576002712F6 /* String+AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B98ED424E05576002712F6 /* String+AttributedText.swift */; };
 		07C96077239DAF3800BD6719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C96076239DAF3800BD6719 /* AppDelegate.swift */; };
 		07C96079239DAF3800BD6719 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C96078239DAF3800BD6719 /* SceneDelegate.swift */; };
 		07C9607B239DAF3800BD6719 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9607A239DAF3800BD6719 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		07878A5D23A69DB300CE43DE /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		07878A5F23A69DCE00CE43DE /* PaidProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidProduct.swift; sourceTree = "<group>"; };
+		07B98ED124E04DBA002712F6 /* ConstitutionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstitutionTableViewController.swift; sourceTree = "<group>"; };
+		07B98ED424E05576002712F6 /* String+AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+AttributedText.swift"; sourceTree = "<group>"; };
 		07C96073239DAF3800BD6719 /* CanadianConstitution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadianConstitution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C96076239DAF3800BD6719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07C96078239DAF3800BD6719 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		07B98ED324E05563002712F6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				07B98ED424E05576002712F6 /* String+AttributedText.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		07C9606A239DAF3800BD6719 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +103,7 @@
 		07C96075239DAF3800BD6719 /* CanadianConstitution */ = {
 			isa = PBXGroup;
 			children = (
+				07B98ED324E05563002712F6 /* Extensions */,
 				07878A5C23A69D9E00CE43DE /* Helpers */,
 				07C96095239F04A500BD6719 /* Model */,
 				07C96090239DC32F00BD6719 /* Views */,
@@ -114,6 +127,7 @@
 				07C96093239DEACD00BD6719 /* TextViewController.swift */,
 				07C9609E23A08BD200BD6719 /* AboutViewController.swift */,
 				07C960A223A1C07500BD6719 /* PremiumViewController.swift */,
+				07B98ED124E04DBA002712F6 /* ConstitutionTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,8 +231,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				07878A5E23A69DB300CE43DE /* IAPHelper.swift in Sources */,
+				07B98ED524E05576002712F6 /* String+AttributedText.swift in Sources */,
 				07C9609B239F0DBD00BD6719 /* Section.swift in Sources */,
 				07C9608E239DBC5800BD6719 /* FirstTableViewController.swift in Sources */,
+				07B98ED224E04DBA002712F6 /* ConstitutionTableViewController.swift in Sources */,
 				07878A6023A69DCE00CE43DE /* PaidProduct.swift in Sources */,
 				07C96092239DC34B00BD6719 /* SecondTableViewController.swift in Sources */,
 				07C9609F23A08BD200BD6719 /* AboutViewController.swift in Sources */,

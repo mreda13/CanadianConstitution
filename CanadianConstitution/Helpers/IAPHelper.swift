@@ -108,6 +108,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
 
   public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
     for transaction in transactions {
+       // SKPaymentQueue.default().finishTransaction(transaction)
       switch (transaction.transactionState) {
       case .purchased:
         complete(transaction: transaction)
@@ -138,7 +139,8 @@ extension IAPHelper: SKPaymentTransactionObserver {
     }
     
   private func complete(transaction: SKPaymentTransaction) {
-    //print("Purchase complete.")
+    
+    print("Purchase complete.")
     guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
 
     UserDefaults.standard.set(true, forKey: productIdentifier)
@@ -150,7 +152,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
   private func restore(transaction: SKPaymentTransaction) {
     guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
     
-    //print("Restoring \(productIdentifier)")
+    print("Restoring \(productIdentifier)")
     UserDefaults.standard.set(true, forKey: productIdentifier)
     purchasedProductIdentifiers.insert(productIdentifier)
     totalRestoredPurchases+=1
@@ -162,7 +164,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
     if let transactionError = transaction.error as NSError?,
       let localizedDescription = transaction.error?.localizedDescription,
         transactionError.code != SKError.paymentCancelled.rawValue {
-        //print("Transaction Error: \(localizedDescription)")
+        print("Transaction Error: \(localizedDescription)")
         onBuyProductHandler?(.failure(transactionError))
       }
 
